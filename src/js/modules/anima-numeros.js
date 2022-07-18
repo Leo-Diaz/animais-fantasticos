@@ -3,7 +3,7 @@ export default class AnimaNumeros {
     this.numeros = document.querySelectorAll(numeros);
     this.observerTarget = document.querySelector(observerTarget);
     this.observerClass = observerClass;
-    this.handlemutation = this.handleMutation.dind(this);
+    this.handleMutation = this.handleMutation.bind(this);
   }
 
   static incrementarNumero(numero) {
@@ -40,7 +40,7 @@ export default class AnimaNumeros {
   }
 
   init() {
-    if (this.numeros.lenght && this.observerTarget) {
+    if (this.numeros.length && this.observerTarget) {
       this.addMutationObserver();
     }
     return this;
