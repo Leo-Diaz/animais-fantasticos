@@ -9,7 +9,7 @@ export default class Tooltip {
   onMouseMove(event) {
     this.tooltipBox.style.top = `${event.pageY + 15}px`;
 
-    if (event.pageX + 240 > window.innerWidth) {
+    if ((event.pageX + 240) > window.innerWidth) {
       this.tooltipBox.style.left = `${event.pageX - 190}px`;
     } else {
       this.tooltipBox.style.left = `${event.pageX + 15}px`;
@@ -34,8 +34,8 @@ export default class Tooltip {
   onMouseOver({ currentTarget }) {
     this.criarTooltipBox(currentTarget);
 
-    currentTarget.currentTarget.addEventListener('mousemove', this.onMouseMove);
-    currentTarget.currentTarget.addEventListener('mouseleave', this.onMouseLeave);
+    currentTarget.addEventListener('mousemove', this.onMouseMove);
+    currentTarget.addEventListener('mouseleave', this.onMouseLeave);
   }
 
   addTooltipsEvent() {
@@ -45,7 +45,7 @@ export default class Tooltip {
   }
 
   init() {
-    if (this.tooltips.lenght) {
+    if (this.tooltips.length) {
       this.addTooltipsEvent();
     }
     return this;
