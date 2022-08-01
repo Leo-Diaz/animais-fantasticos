@@ -1,4 +1,3 @@
-/* eslint-disable max-classes-per-file */
 import debounce from './debounce.js';
 
 export class Slide {
@@ -15,7 +14,7 @@ export class Slide {
   }
 
   transition(active) {
-    this.slide.style.transition = active ? 'transform 0.3s' : '';
+    this.slide.style.transition = active ? 'transform 0.3s' : '0';
   }
 
   moveSlide(distX) {
